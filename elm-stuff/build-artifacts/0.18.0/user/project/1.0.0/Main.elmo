@@ -1,0 +1,214 @@
+var _user$project$Main$getReference = function (model) {
+	return _elm_lang$core$Native_Utils.eq(model.ref, '') ? _elm_lang$html$Html$text('') : A2(
+		_elm_lang$html$Html$sup,
+		{ctor: '[]'},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$a,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$href(model.ref),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('[1]'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$getRandomIntInDBRange = function (model) {
+	return _elm_lang$core$Tuple$first(
+		A2(
+			_elm_lang$core$Random$step,
+			A2(
+				_elm_lang$core$Random$int,
+				1,
+				_elm_lang$core$List$length(model.db) + 1),
+			_elm_lang$core$Random$initialSeed(model.time)));
+};
+var _user$project$Main$getRandomFromDB = function (model) {
+	return _elm_lang$core$List$head(
+		_elm_lang$core$List$reverse(
+			A2(
+				_elm_lang$core$List$take,
+				_user$project$Main$getRandomIntInDBRange(model),
+				model.db)));
+};
+var _user$project$Main$getFact = function (model) {
+	var _p0 = _user$project$Main$getRandomFromDB(model);
+	if (_p0.ctor === 'Just') {
+		return _elm_lang$core$Tuple$first(_p0._0);
+	} else {
+		return '';
+	}
+};
+var _user$project$Main$getRef = function (model) {
+	var _p1 = _user$project$Main$getRandomFromDB(model);
+	if (_p1.ctor === 'Just') {
+		return _elm_lang$core$Tuple$second(_p1._0);
+	} else {
+		return '';
+	}
+};
+var _user$project$Main$getDB = {
+	ctor: '::',
+	_0: {ctor: '_Tuple2', _0: 'Hoes ain\'t just hoes, they some niggas.', _1: 'https://www.youtube.com/watch?v=PFV-lYN6cw8'},
+	_1: {
+		ctor: '::',
+		_0: {ctor: '_Tuple2', _0: 'Apple sold more than 5 iPhones in 2016.', _1: 'https://www.statista.com/statistics/276306/global-apple-iphone-sales-since-fiscal-year-2007'},
+		_1: {
+			ctor: '::',
+			_0: {ctor: '_Tuple2', _0: 'There are more than 500 people living in California.', _1: 'https://en.wikipedia.org/wiki/California'},
+			_1: {
+				ctor: '::',
+				_0: {ctor: '_Tuple2', _0: 'More than 1000 people log in to Facebook every day.', _1: 'https://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/'},
+				_1: {
+					ctor: '::',
+					_0: {ctor: '_Tuple2', _0: 'There are more than 300 neurons in the human brain.', _1: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776484/'},
+					_1: {
+						ctor: '::',
+						_0: {ctor: '_Tuple2', _0: 'There are less than 10 neanderthals left on planet earth.', _1: 'https://en.wikipedia.org/wiki/Neanderthal'},
+						_1: {ctor: '[]'}
+					}
+				}
+			}
+		}
+	}
+};
+var _user$project$Main$viewFact = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('col-12'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('row'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$h1,
+						{ctor: '[]'},
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(model.fact),
+							_1: {
+								ctor: '::',
+								_0: _user$project$Main$getReference(model),
+								_1: {ctor: '[]'}
+							}
+						}),
+					_1: {ctor: '[]'}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('grid'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$div,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('row'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: A2(
+						_elm_lang$html$Html$div,
+						{
+							ctor: '::',
+							_0: _elm_lang$html$Html_Attributes$class('col'),
+							_1: {ctor: '[]'}
+						},
+						{
+							ctor: '::',
+							_0: _user$project$Main$viewFact(model),
+							_1: {ctor: '[]'}
+						}),
+					_1: {
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$div,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('row col-12 col'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Press space to get a fact.'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {ctor: '[]'}
+					}
+				}),
+			_1: {ctor: '[]'}
+		});
+};
+var _user$project$Main$model = {fact: '', ref: '', press: 0, time: 0, db: _user$project$Main$getDB};
+var _user$project$Main$init = {ctor: '_Tuple2', _0: _user$project$Main$model, _1: _elm_lang$core$Platform_Cmd$none};
+var _user$project$Main$Model = F5(
+	function (a, b, c, d, e) {
+		return {fact: a, ref: b, db: c, press: d, time: e};
+	});
+var _user$project$Main$OnTime = function (a) {
+	return {ctor: 'OnTime', _0: a};
+};
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p2 = msg;
+		if (_p2.ctor === 'Presses') {
+			return _elm_lang$core$Native_Utils.eq(_p2._0, 32) ? {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						ref: _user$project$Main$getRef(model),
+						fact: _user$project$Main$getFact(model),
+						press: _user$project$Main$getRandomIntInDBRange(model)
+					}),
+				_1: A2(_elm_lang$core$Task$perform, _user$project$Main$OnTime, _elm_lang$core$Time$now)
+			} : {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
+		} else {
+			return {
+				ctor: '_Tuple2',
+				_0: _elm_lang$core$Native_Utils.update(
+					model,
+					{
+						time: _elm_lang$core$Basics$round(_p2._0)
+					}),
+				_1: _elm_lang$core$Platform_Cmd$none
+			};
+		}
+	});
+var _user$project$Main$Presses = function (a) {
+	return {ctor: 'Presses', _0: a};
+};
+var _user$project$Main$subscriptions = function (model) {
+	return _elm_lang$keyboard$Keyboard$presses(
+		function (code) {
+			return _user$project$Main$Presses(code);
+		});
+};
+var _user$project$Main$main = _elm_lang$html$Html$program(
+	{init: _user$project$Main$init, view: _user$project$Main$view, update: _user$project$Main$update, subscriptions: _user$project$Main$subscriptions})();

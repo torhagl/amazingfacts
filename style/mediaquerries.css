@@ -1,0 +1,17 @@
+/* -------------- */
+/* MEDIA QUERRIES */
+/* -------------- */
+
+@media screen and (max-width: 320px) {
+    /* Reduces font size for IP5 */
+    .col-4 {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    /* Reduces font size for Galaxy S5 */
+    .col-4 {
+        font-size: 15px;
+    }
+}

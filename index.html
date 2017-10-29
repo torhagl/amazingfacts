@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/style/stylesheet.css">
+    <link rel="stylesheet" href="/style/mediaquerries.css">
+</head>
+<body>
+<!--  Relative to index.html, main.elm lives in `src/Main.elm`. -->
+<!-- Prefixing that with `/_compile/` gives us magic! -->
+<script src="/_compile/src/Main.elm"></script>
+<script>
+    var app = Elm.Main.fullscreen()
+</script>
+</body>
+</html>
