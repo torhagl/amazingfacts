@@ -71,7 +71,11 @@ var _user$project$Main$getDB = {
 					_1: {
 						ctor: '::',
 						_0: {ctor: '_Tuple2', _0: 'There are less than 10 neanderthals left on planet earth.', _1: 'https://en.wikipedia.org/wiki/Neanderthal'},
-						_1: {ctor: '[]'}
+						_1: {
+							ctor: '::',
+							_0: {ctor: '_Tuple2', _0: 'More than half of all pregnancies are a direct consequence of sexual intercourse.', _1: 'https://en.wikipedia.org/wiki/In_vitro_fertilisation'},
+							_1: {ctor: '[]'}
+						}
 					}
 				}
 			}

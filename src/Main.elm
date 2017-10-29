@@ -74,9 +74,8 @@ getDB = [
          ("More than 1000 people log in to Facebook every day.","https://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/"),
          ("There are more than 300 neurons in the human brain.","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2776484/"),
          ("There are less than 10 neanderthals left on planet earth.","https://en.wikipedia.org/wiki/Neanderthal"),
-         ("More than half of all pregnancies are a direct consequence of sexual intercourse.","https://en.wikipedia.org/wiki/In_vitro_fertilisation"),
-         ("There are more than  fish in the ocean.","")
-        ]
+         ("More than half of all pregnancies are a direct consequence of sexual intercourse.","https://en.wikipedia.org/wiki/In_vitro_fertilisation")
+         ]
 
 getRandomFromDB : Model -> Maybe (String, String)
 getRandomFromDB model = List.head (List.reverse (List.take (getRandomIntInDBRange model) model.db))
