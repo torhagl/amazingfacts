@@ -66,7 +66,7 @@ viewFact : Model -> Html Msg
 viewFact model = div [class "col-12"][div [class "row"] [h1 [][text model.fact, getReference model]]]
 
 
-getDB : List (String, String)
+getDB : List (String,String)
 getDB = [
          ("Hoes ain't just hoes, they some niggas.","https://www.youtube.com/watch?v=PFV-lYN6cw8"),
          ("Apple sold more than 5 iPhones in 2016.","https://www.statista.com/statistics/276306/global-apple-iphone-sales-since-fiscal-year-2007"),
